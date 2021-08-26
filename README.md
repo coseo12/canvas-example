@@ -8,7 +8,7 @@ Canvas Tutorial for Beginners
 
 - [x] EP1 - Default Settings
 - [x] EP2 - Drawing on the canvas
-- [ ] EP3 - Animating the canvas
+- [x] EP3 - Animating the canvas
 - [ ] EP4 - Interacting with the canvas
 
 ## 📔 Rectangle
@@ -118,3 +118,33 @@ ctx.arc(300, 400, 30, 0, Math.PI * 2, false);
 ctx.strokeStyle = '#3f5789';
 ctx.stroke();
 ```
+
+## 📔 CanvasRenderingContext2D.clearRect()
+
+캔버스를 초기화합니다
+
+`Syntax`
+
+```js
+void ctx.arc(x, y, width, height);
+```
+
+`Examples`
+
+```html
+<canvas id="canvas"></canvas>
+```
+
+```js
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+```
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect)
+
+## 📔 Window.requestAnimationFrame()
+
+브라우저에 애니메이션을 수행하고 싶다고 알리고 브라우저가 다음 다시 그리기 전에 애니메이션을 업데이트하기 위해 지정된 함수를 호출하도록 요청합니다. 이메서드는 다시 그리기 전에 인수로 콜백을 사용합니다.
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
