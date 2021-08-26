@@ -6,14 +6,15 @@ Canvas Tutorial for Beginners
 
 ## TODO
 
-- [x] EP1 - Default Settings, fillRect()
-- [ ] EP2 -
-- [ ] EP3 -
-- [ ] EP4 -
+- [x] EP1 - Default Settings
+- [x] EP2 - Drawing on the canvas
+- [ ] EP3 - Animating the canvas
+- [ ] EP4 - Interacting with the canvas
 
-## 📔 CanvasRenderingContext2D.fillRect()
+## 📔 Rectangle
 
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect)
+- [fillRect](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect) -
+  시작점 (x, y)이고 크기가 와 너비가 높이로 지정되어 지는 채워직 사각형을 그립니다. 채우기 스타일은 현재 fillStyle 속성에 의해 결정됩니다.
 
 `Syntax`
 
@@ -21,14 +22,12 @@ Canvas Tutorial for Beginners
 void ctx.fillRect(x, y, width, height);
 ```
 
-The fillRect() method draws a filled rectangle whose starting point is at (x, y) and whose size is specified by width and height. The fill style is determined by the current fillStyle attribute.
-
 `Parameters`
 
-- x: x-axis position
-- y: y-axis position
-- width: The rectangle's width
-- height: The rectangle's height
+- x: x-axis 좌표
+- y: y-axis 좌표
+- width: 사각형 넓이
+- height: 사각형 높이
 
 `Examples`
 
@@ -41,4 +40,81 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = 'green';
 ctx.fillRect(20, 10, 150, 100);
+```
+
+## 📔 Line
+
+- [beginPath](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath) - 하위 경로 목록을 비워 새 경로를 시작합니다.
+
+- [moveTo](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo) - 시작 포인터 위치를 변경합니다.
+
+- [lintTo](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo) - x-axis, y-axis 좌표로 라인 경로 목록을 설정합니다.
+
+- [stroke](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo) - 경로 목록을 라인으로 연결합니다. 라인 색상은 strokeStyle 속성에 의해 결정됩니다.
+
+`Syntax`
+
+```js
+void ctx.beginPath();
+void ctx.moveTo(x, y);
+void ctx.lineTo(x, y);
+void ctx.lineTo(x, y);
+void ctx.stroke();
+```
+
+`Examples`
+
+```html
+<canvas id="canvas"></canvas>
+```
+
+```js
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// First path
+ctx.beginPath();
+ctx.strokeStyle = 'blue';
+ctx.moveTo(20, 20);
+ctx.lineTo(200, 20);
+ctx.stroke();
+
+// Second path
+ctx.beginPath();
+ctx.strokeStyle = 'green';
+ctx.moveTo(20, 20);
+ctx.lineTo(120, 120);
+ctx.stroke();
+```
+
+## 📔 Arc / Circle
+
+`Syntax`
+
+```js
+void ctx.arc(x, y, r, startAngle, endAngle, drawCounterClockwise);
+```
+
+`Parameters`
+
+- x: x-axis 좌표
+- y: y-axis 좌표
+- r: The radius of the circle
+- startAngle: The starting angle, in radians
+- endAngle: The ending angle, in radians
+- drawCounterClockwise: Optional. Specifies whether the drawing should be counterclockwise or clockwise. False is default, and indicates clockwise, while true indicates counter-clockwise
+
+`Examples`
+
+```html
+<canvas id="canvas"></canvas>
+```
+
+```js
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+ctx.beginPath();
+ctx.arc(300, 400, 30, 0, Math.PI * 2, false);
+ctx.strokeStyle = '#3f5789';
+ctx.stroke();
 ```
