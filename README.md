@@ -10,16 +10,6 @@ Canvas Tutorial for Beginners
 - [x] EP2 - Drawing on the canvas
 - [x] EP3 - Animating the canvas
 - [x] EP4 - Interacting with the canvas
-- [ ] EP5 - Gravity
-- [ ] EP6 - Collision Detection
-- [ ] EP7 - Circular Motion
-- [ ] EP8 - Sine Waves
-- [ ] EP9 - Snakey Boi with Perlin Noise
-- [ ] EP10 - Realistic Canvas Fireworks
-- [ ] EP11 - Mace Windu's Lightsaber but With Like 10 Other Colors
-- [ ] EP12 - Tron-Like Particle Tunnels
-- [ ] EP13 - Galactic Light Trails
-- [ ] EP14 - Canvas and JavaScript Game Tutorial
 
 ## 📔 Rectangle
 
